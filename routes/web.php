@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\HomeController as GuestHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
 
     //Route dei progetti in portfolio
-    Route::get('/projects')->name('projects.index');
+    Route::resource('projects', ProjectController::class);
+   
+
 
 
 
