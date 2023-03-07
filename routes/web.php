@@ -19,10 +19,14 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 Route::get('/', [GuestHomeController::class, 'index']);
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
+    //Home dell'admin
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
 
+    //Route dei progetti in portfolio
+    Route::get('/projects')->name('projects.index');
 
-    
+
+
 });
 
 Route::middleware('auth')->group(function () {
