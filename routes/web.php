@@ -18,8 +18,12 @@ use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
 Route::get('/', [GuestHomeController::class, 'index']);
 
-Route::get('/admin', [AdminHomeController::class, 'index'])->middleware(['auth', 'verified'])
-->name('admin.home');
+Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
+    Route::get('/', [AdminHomeController::class, 'index'])->name('home');
+
+
+    
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
