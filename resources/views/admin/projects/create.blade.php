@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="col-6 mb-3">
-                    <label for="techonologies_used" class="form-label">Technologies used </label>
+                    <label for="techonologies_used" class="form-label">Technlogies used </label>
                     <input type="text" class="form-control" id="techonologies_used" placeholder="Quali tecnologie hai utilizzato?" name="techonologies_used" required>
                 </div>
         </div>
