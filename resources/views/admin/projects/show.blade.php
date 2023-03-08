@@ -12,7 +12,7 @@
     <div class="card h-100 mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="{{$project->image}}" class="img-fluid rounded-start" alt="...">
+            <img src="{{$project->image}}" class="img-fluid " alt="...">
           </div>
           <div class="col-md-8 text-center">
             <div class="card-body">
@@ -25,5 +25,10 @@
           </div>
         </div>
       </div>
+
+      <div class="buttons my-4 d-flex justify-content-between">
+        <a href="{{$project->project_link || 'https://github.com/VincenzoDiMasi'}}" class="btn btn-success">Project Link</a>
+        <a href="{{url('admin/projects') }}" class="btn btn-primary">Back to Projects</a>
+    </div>
 </div>
 @endsection
