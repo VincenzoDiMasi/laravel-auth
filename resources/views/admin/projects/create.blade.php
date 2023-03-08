@@ -45,7 +45,7 @@
 
              <a href="{{route('admin.projects.index')}}" class="btn btn-primary"><i class="fa-solid fa-rotate-left"></i> Back</a>
             <button class="btn btn-success me-2">
-                Save
+                <i class="fa-solid fa-plus me-1"></i>Add
             </button>
 
            
