@@ -26,9 +26,19 @@
         </div>
       </div>
 
-      <div class="buttons my-4 d-flex justify-content-between">
-        <a href="{{$project->project_link || 'https://github.com/VincenzoDiMasi'}}" class="btn btn-success">Project Link</a>
-        <a href="{{url('admin/projects') }}" class="btn btn-primary">Back to Projects</a>
-    </div>
+      <div class="buttons mt-3 d-flex justify-content-end">
+        <a href="{{url('admin/projects') }}" class="btn btn-primary mb-3"><i class="fa-solid fa-circle-left me-1"></i>Back to Projects</a>
+        <a href="{{$project->project_link || 'https://github.com/VincenzoDiMasi'}}" class="btn btn-success mb-3 mx-4"><i class="fa-brands fa-github me-1"></i>Project Link</a>
+        <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="me-2">
+          @method('DELETE')
+          @csrf
+
+          <button class="btn btn-danger"><i class="fa-solid fa-trash-can me-1"></i> Delete</button>
+        </form>
+
+      {{-- <div class="buttons my-4 d-flex justify-content-between">
+        <a href="{{$project->project_link || 'https://github.com/VincenzoDiMasi'}}" class="btn btn-success"><i class="fa-brands fa-github me-1"></i>Project Link</a>
+        <a href="{{url('admin/projects') }}" class="btn btn-primary"><i class="fa-solid fa-circle-left me-1"></i>Back to Projects</a>
+    </div> --}}
 </div>
 @endsection

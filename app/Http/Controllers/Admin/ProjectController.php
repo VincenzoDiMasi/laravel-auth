@@ -36,7 +36,7 @@ class ProjectController extends Controller
     {
         //
         $data = $request->all();
-        
+
         $project = new Project();
 
         $project->fill($data);
@@ -77,5 +77,8 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         //
+        $project->delete();
+
+        return to_route('admin.projects.index');
     }
 }

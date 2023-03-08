@@ -16,7 +16,16 @@
                     <div class="card-body">
                       <h5 class="card-title">{{$project->title}}</h5>
                       <p class="card-text">Created at: {{$project->created_at}}</p>
-                      <a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-primary">See more</a>
+                      <div class="buttons d-flex justify-content-center">
+                        <a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-primary me-2"><i class="fa-solid fa-circle-info"></i> See More </a>
+                        <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+
+                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Delete </button>
+                        </form>
+
+                      </div>
                     </div>
                   </div>
             </div>
@@ -24,8 +33,8 @@
             
         </div>
 
-        <div class="buttons my-5 d-flex justify-content-center">
-            <a href="{{route('admin.projects.create')}}" class="btn btn-success">Create a New Project</a>
+        <div class="buttons mb-5 d-flex justify-content-center">
+            <a href="{{route('admin.projects.create')}}" class="btn btn-success"><i class="fa-solid fa-plus me-1"></i>Add a New Project</a>
         </div>
 
         </div>

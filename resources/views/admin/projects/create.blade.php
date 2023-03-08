@@ -42,11 +42,13 @@
         </div>
 
         <div class="buttons d-flex justify-content-between my-4">
+
+             <a href="{{route('admin.projects.index')}}" class="btn btn-primary"><i class="fa-solid fa-rotate-left"></i> Back</a>
             <button class="btn btn-success me-2">
                 Save
             </button>
 
-            <a href="{{route('admin.projects.index')}}" class="btn btn-primary"><i class="fa-solid fa-rotate-left"></i> Back</a>
+           
         </div>
 
         </form>
