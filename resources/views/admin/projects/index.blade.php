@@ -21,6 +21,12 @@
                   </div>
             </div>
             @endforeach
+            
+        </div>
+
+        <div class="buttons my-5 d-flex justify-content-center">
+            <a href="{{route('admin.projects.create')}}" class="btn btn-success">Create a New Project</a>
+        </div>
 
         </div>
     </div>
