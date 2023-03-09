@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 
 
 class ProjectController extends Controller
@@ -39,6 +41,11 @@ class ProjectController extends Controller
 
         $project = new Project();
 
+        if (Arr::exists($data, 'image')) {
+            $img_url = Storage::put('projects', $data['image']);
+            $data['image'] = $img_url;
+        }
+
         $project->fill($data);
 
         $project->save();
@@ -69,7 +76,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        //dd($request->all());
+        
+
         $data = $request->all();
 
         $project->update($data);

@@ -12,7 +12,7 @@
             @foreach ($projects as $project)
             <div class="col-4 mb-5">
                 <div class="card text-center">
-                    <img src="{{$project->image}}" class="card-img-top" alt="...">
+                    <img src="{{asset('storage/' . $project->image)}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$project->title}}</h5>
                       <p class="card-text">Created at: {{$project->created_at}}</p>

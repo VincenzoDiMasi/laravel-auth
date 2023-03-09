@@ -12,7 +12,7 @@
     <div class="card h-100 mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="{{$project->image}}" class="img-fluid " alt="...">
+            <img src="{{asset('storage/' . $project->image)}}" class="img-fluid " alt="...">
           </div>
           <div class="col-md-8 text-center">
             <div class="card-body">
