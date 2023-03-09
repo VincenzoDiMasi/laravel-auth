@@ -28,7 +28,7 @@
 
       <div class="buttons mt-3 d-flex justify-content-end">
         <a href="{{url('admin/projects') }}" class="btn btn-primary mb-3"><i class="fa-solid fa-circle-left me-1"></i>Back to Projects</a>
-        <a href="{{$project->project_link || 'https://github.com/VincenzoDiMasi'}}" class="btn btn-success mb-3 mx-4"><i class="fa-brands fa-github me-1"></i>Project Link</a>
+        <a href="{{$project->project_link}}" class="btn btn-success mb-3 mx-4"><i class="fa-brands fa-github me-1"></i>Project Link</a>
         <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning text-white mb-3 me-2"><i class="fa-solid fa-pencil"></i> Edit</a>
 
         <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="me-2">
